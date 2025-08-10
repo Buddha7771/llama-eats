@@ -24,7 +24,7 @@ class Paper(BaseModel):
         List of subject categories or topics, by default None.
     authors : list[str], optional
         List of paper authors, by default None.
-    pdf_url : str, optional
+    pdf_url : str , optional
         URL to the PDF version of the paper, by default None.
 
     """
@@ -38,3 +38,21 @@ class Paper(BaseModel):
     subjects: list[str] | None = None
     authors: list[str] | None = None
     pdf_url: str | None = None
+
+
+class NotionDatabaseEntry(BaseModel):
+    """Base model representing a Notion database entry.
+
+    Parameters
+    ----------
+    title: str
+        Title of the paper.
+    abstract: str
+        Abstract of the paper.
+    url: str
+        URL of the paper.
+    """
+
+    title: str
+    abstract: str
+    url: str

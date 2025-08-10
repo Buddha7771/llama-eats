@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 
 import arxiv
 
-from llama_eats.paper import Paper
+from llama_eats.models import Paper
 
 logger = logging.getLogger(__name__)
 
