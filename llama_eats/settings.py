@@ -1,6 +1,5 @@
 import os
 
-from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 ENV = os.environ.get("ENV", "dev")
@@ -13,14 +12,8 @@ class Settings(BaseSettings):
         env_file=[".env", f".env.{ENV}"],
         env_file_encoding="utf-8",
     )
-    notion_token: str = Field(
-        ...,
-        description="Notion API token",
-    )
-    notion_key_db_id: str = Field(
-        ...,
-        description="Notion database ID that contains key paper metadata",
-    )
+    notion_token: str
+    notion_key_db_id: str
 
 
 settings = Settings()
