@@ -5,15 +5,15 @@ description = "Find relevant papers effortlessly using LLM"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "arxiv>=2.2.0",
-    "chromadb>=1.0.15",
-    "numpy>=2.2.6",
-    "ollama>=0.5.1",
-    "openreview-py>=1.51.2",
-    "pydantic-settings>=2.10.1",
-    "requests>=2.32.4",
-    "slack-sdk>=3.36.0",
-    "tqdm>=4.67.1",
+  "arxiv>=2.2.0",
+  "numpy>=2.2.6",
+  "ollama>=0.5.1",
+  "openreview-py>=1.51.2",
+  "pandas>=2.3.3",
+  "pydantic-settings>=2.10.1",
+  "requests>=2.32.4",
+  "slack-sdk>=3.36.0",
+  "tqdm>=4.67.1",
 ]
 
 [dependency-groups]
@@ -23,15 +23,12 @@ dev = ["ipykernel>=6.30.0", "pytest>=8.4.1", "ruff>=0.12.7"]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.hatch.build.targets.wheel]
-packages = ["llama_eats"]
-
-[tool.ruff]
+[tool.ruff.lint]
 select = ["ALL"]
 ignore = ["D104", "D100"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "tests/*" = ["ANN201", "D103"]
